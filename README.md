@@ -1,0 +1,2 @@
+# dataserver
+Redis队列入库工具是把redis队列内存中的json字符串自动保存到数据库的工具，它支持Oracle,sqlserver和mysql等主流数据库
