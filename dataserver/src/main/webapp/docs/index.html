@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	<h1 id="a1">1 工程介绍</h1>
+	<blockquote>
+		<p>
+			工程主要实现公交系统后台服务的管理、主要是针对redis内存数据的接收、同步<br />工程主要包括如下几个功能，多线程控制，redis队列数据接收，和基于配置的数据解析
+		</p>
+	</blockquote>
+	<h2 id="a1.1">1.1 多线程控制</h2>
+	<blockquote>
+		<p>
+			包名使用 com.gci.aptsserver.task<br />TaskManager 多线程管理类,使用 ScheduledExecutorService 线程池<br />StoreRunnable 主要功能的实现类,使用前需要注入 redisQueueKey 队列名称
+		</p>
+	</blockquote>
+	<blockquote>
+		<p>TaskController 管理类</p>
+	</blockquote>
+	<ul>
+		<li>start 启动任务</li>
+		<li>stop 停止任务</li>
+		<li>list 当前正在运行的任务</li>
+		<li>taskTypes 当前可以执行的任务</li>
+	</ul>
+	<h2 id="a1.2">1.2 队列数据接收</h2>
+	<blockquote>
+		<p>队列使用redis队列，关于redis队列的性能预估如下，</p>
+	</blockquote>
+	<ol>
+		<li>多线程情况下，使用pop，在8个线程的情况下，吞吐量大约在 1w条/s,即单线程pop大约在 1200/</li>
+		<li>使用range和trim的组合效率大约在 1w/1.2s，不过不支持多线程并发</li>
+		<li>使用事务控制range和trim，保证操作的原子性，应该可以实现多线程和高速吞吐，后续可以再这方面进一步研究</li>
+	</ol>
+	<h3 id="a1.3">1.3 队列数据基于配置解析</h3>
+	<blockquote>
+		<p>
+			队列数据按照 队列-类型-表-字段 的逻辑设计<br />即一个队列可以传输多重类型的数据，每种类型的数据可以对应多张数据库表，每张表定义表的操作类型，主键，字段及字段类型等内容
+		</p>
+	</blockquote>
+</body>
+</html>

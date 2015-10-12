@@ -1,0 +1,26 @@
+queue_name,dpdb.queue.adreal.04,,,,队列名
+table_name,dy_adreal,,,,表名
+primary_key,id,assigned,,,"主键，assigned表示默认的字段，多个字段用逗号分开,sequence表示系统主键"
+save_method,insert,,,,数据保存方式，update表示更新，insert表示插入
+process_class,,,,,处理的类，默认为空
+introduction,进出站数据，队列保存到dy_adreal表中,,,,队列介绍
+interval,2
+column,id,_id_,string,,"字段,分别为数据库字段名，redis字段名，类型，参数"
+column,obuid,obuid,string,,
+column,route_id,route_id,integer,,
+column,route_code,route_code,string,,
+column,route_name,route_name,string,,
+column,service_number,service_number,string,,
+column,routesub_id,routesub_id,integer,,
+column,route_sub_name,route_sub_name,string,,
+column,service_type,service_type,string,,
+column,bus_stop_code,busstop_code,string,,
+column,route_sta_id,route_sta_id,integer,,
+column,station_id,station_id,integer,,
+column,station_name,station_name,string,,
+column,order_number,order_number,integer,,
+column,report_type,report_type,string,,
+column,runningboard,runningboard,string,,
+column,ad_flag,ad_flag,string,,
+column,ad_time,ad_time,date,yyyy-MM-dd HH24:mi:ss,
+column,trip_id,trip_id,integer,,

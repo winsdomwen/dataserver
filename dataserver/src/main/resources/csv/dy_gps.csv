@@ -1,0 +1,30 @@
+queue_name,dpdb.queue.income.05,,,,队列名
+table_name,dy_gps,,,,表名
+primary_key,obuid,assigned,,,"主键，assigned表示默认的字段，多个字段用逗号分开,sequence表示系统主键"
+save_method,insert,,,,数据保存方式，update表示更新，insert表示插入
+process_class,,,,,处理的类，默认为空
+introduction,队列保存到dy_gps表中,,,,队列介绍
+threads,2
+interval,1
+column,obuid,obuid,string,,"字段,分别为数据库字段名，redis字段名，类型，参数"
+column,bus_id,bus_id,integer,,
+column,revtime,revtime,date,yyyy-MM-dd HH24:mi:ss,
+column,obutime,obutime,date,yyyy-MM-dd HH24:mi:ss,
+column,longitude,longitude,double,,
+column,latitude,latitude,double,,
+column,gpskey,gpskey,string,,
+column,direction,direction,integer,,
+column,speed,speed,double,,
+column,running_no,running_no,string,,
+column,remark,remark,string,,
+column,data_serial,data_serial,string,,
+column,gps_mileage,gps_mileage,integer,,
+column,satellite_count,satellite_count,integer,,
+column,route_code,route_code,string,,
+column,service,service,string,,
+column,additional,additional,string,,
+column,gps_valid,gps_valid,string,,
+column,trip_id,trip_id,integer,,
+column,longitude1,longitude1,double,,
+column,latitude1,latitude1,double,,
+column,remark,gps_type,string,,
